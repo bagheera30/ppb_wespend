@@ -88,16 +88,16 @@ class _HomeState extends State<Home> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.attach_money),
-            label: 'limit',
+            icon: Icon(Icons.report),
+            label: 'laporan',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.add_circle_outline_outlined),
             label: 'add',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.report),
-            label: 'laporan',
+            icon: Icon(Icons.attach_money),
+            label: 'limit',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),

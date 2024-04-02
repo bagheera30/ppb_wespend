@@ -41,7 +41,7 @@ class _LaporanPageState extends State<LaporanPage> {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
             const SizedBox(height: 16),
@@ -52,7 +52,7 @@ class _LaporanPageState extends State<LaporanPage> {
                     value: selectedBulan,
                     decoration: InputDecoration(
                       labelText: 'Bulan',
-                      labelStyle: TextStyle(color: Colors.white),
+                      labelStyle: TextStyle(color: Colors.black),
                       border: OutlineInputBorder(),
                     ),
                     onChanged: (String? newValue) {
@@ -77,7 +77,7 @@ class _LaporanPageState extends State<LaporanPage> {
                     value: selectedTahun,
                     decoration: InputDecoration(
                       labelText: 'Tahun',
-                      labelStyle: TextStyle(color: Colors.white),
+                      labelStyle: TextStyle(color: Colors.black),
                       border: OutlineInputBorder(),
                     ),
                     onChanged: (String? newValue) {

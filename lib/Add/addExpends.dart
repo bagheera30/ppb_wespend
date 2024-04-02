@@ -15,7 +15,7 @@ class _AddExpendesPageState extends State<AddExpendesPage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          backgroundColor: Colors.yellow[600], // Latar belakang warna kuning
+          backgroundColor: Colors.white, // Latar belakang warna kuning
           title: Text('Data Tersimpan'),
           content: Text('Data Expends telah disimpan.'),
           actions: [
