@@ -1,20 +1,22 @@
-
 import 'package:flutter/material.dart';
-import 'package:pbb_wespend/regis.dart';
+import 'package:pbb_wespend/home.dart';
 
-class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
+class Regis extends StatefulWidget {
+  const Regis({Key? key}) : super(key: key);
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Regis> createState() => _RegisState();
 }
 
-class _LoginState extends State<Login> {
+class _RegisState extends State<Regis> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController confirmPasswordController = TextEditingController();
 
   bool isEmailValid = true;
   bool isPasswordVisible = false;
+  bool isConfirmPasswordVisible = false;
+  bool isPasswordMatch = true;
 
   void validateEmail(String email) {
     setState(() {
@@ -32,17 +34,36 @@ class _LoginState extends State<Login> {
     });
   }
 
-  void goToRegisterPage() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const Regis(), // Navigasi ke halaman Regis
-      ),
-    );
+  void toggleConfirmPasswordVisibility() {
+    setState(() {
+      isConfirmPasswordVisible = !isConfirmPasswordVisible;
+    });
+  }
+
+  void validatePasswordMatch(String value) {
+    setState(() {
+      isPasswordMatch = value == passwordController.text;
+    });
   }
 
   void submitForm() {
-    // Implementasi logika autentikasi atau navigasi sesuai kebutuhan aplikasi Anda
+    if (isPasswordMatch) {
+      // Password match, proceed to registration
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const Home(),
+        ),
+      );
+    } else {
+      // Password does not match, show error message
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Password tidak sama.'),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
   }
 
   @override
@@ -51,7 +72,6 @@ class _LoginState extends State<Login> {
       backgroundColor: Colors.yellow[600],
       body: SafeArea(
         child: SingleChildScrollView(
-          // Tambahkan widget ini
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -76,7 +96,6 @@ class _LoginState extends State<Login> {
                           "Ayo mulai bijak dengan keuanganmu di aplikasi WSpend!",
                           style: TextStyle(fontSize: 20, fontFamily: "Roboto"),
                         ),
-                        // Tambahkan widget atau teks di sini
                       ],
                     ),
                   ),
@@ -86,6 +105,44 @@ class _LoginState extends State<Login> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 12),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "Nama",
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          TextField(
+                            decoration: const InputDecoration(
+                              hintText: 'Masukkan Nama',
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 30),
+                    Padding(
+                      padding: EdgeInsets.only(left: 12),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "No HP",
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          TextField(
+                            decoration: const InputDecoration(
+                              hintText: 'Masukkan No HP',
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 30),
                     Padding(
                       padding: EdgeInsets.only(left: 12),
                       child: Column(
@@ -142,13 +199,48 @@ class _LoginState extends State<Login> {
                         ],
                       ),
                     ),
+                    SizedBox(height: 30),
+                    Padding(
+                      padding: EdgeInsets.only(left: 12),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "Konfirmasi Password",
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          TextField(
+                            controller: confirmPasswordController,
+                            decoration: InputDecoration(
+                              hintText: 'Konfirmasi Password',
+                              suffixIcon: IconButton(
+                                icon: Icon(
+                                  isConfirmPasswordVisible
+                                      ? Icons.visibility
+                                      : Icons.visibility_off,
+                                ),
+                                onPressed: toggleConfirmPasswordVisibility,
+                              ),
+                            ),
+                            obscureText: !isConfirmPasswordVisible,
+                            onChanged: validatePasswordMatch,
+                          ),
+                          if (!isPasswordMatch)
+                            const Text(
+                              "Password tidak sama",
+                              style: TextStyle(color: Colors.red),
+                            ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
                 SizedBox(height: 50),
                 ElevatedButton(
                   onPressed: submitForm,
                   child: const Text(
-                    "Masuk",
+                    "Buat Akun",
                     style: TextStyle(fontSize: 20),
                   ),
                   style: ElevatedButton.styleFrom(
@@ -163,33 +255,6 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 const SizedBox(height: 50),
-                const Text(
-                  "Atau",
-                  style: TextStyle(fontSize: 22),
-                ),
-                ElevatedButton(
-                  onPressed: goToRegisterPage, // Navigasi ke halaman Regis
-                  style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.black,
-                    backgroundColor: Colors.white, // Warna teks
-                    minimumSize:
-                        const Size(double.infinity, 50), // Tombol selebar layar
-                    shape: RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.circular(30), // Sudut melengkung
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(width: 8),
-                      Text(
-                        'Register',
-                        style: TextStyle(fontSize: 20),
-                      ),
-                    ],
-                  ),
-                ),
               ],
             ),
           ),
