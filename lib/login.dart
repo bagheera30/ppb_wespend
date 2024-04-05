@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:pbb_wespend/home.dart';
+import 'package:pbb_wespend/regis.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -32,13 +31,26 @@ class _LoginState extends State<Login> {
     });
   }
 
-  void submitForm() {
-    Navigator.pushReplacement(
+  void goToRegisterPage() {
+    Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => const Home(),
+        builder: (context) => const Regis(), // Navigasi ke halaman Regis
       ),
     );
+  }
+
+  void goToRegisterPage() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const Regis(), // Navigasi ke halaman Regis
+      ),
+    );
+  }
+
+  void submitForm() {
+    // Implementasi logika autentikasi atau navigasi sesuai kebutuhan aplikasi Anda
   }
 
   @override
@@ -103,8 +115,7 @@ class _LoginState extends State<Login> {
                           if (!isEmailValid)
                             Text(
                               "Email harus berakhir dengan @gmail.com",
-                              style: GoogleFonts.roboto(
-                                  textStyle: const TextStyle(color: Colors.red)),
+                              style: TextStyle(color: Colors.red),
                             ),
                         ],
                       ),
@@ -164,7 +175,7 @@ class _LoginState extends State<Login> {
                   style: GoogleFonts.roboto(fontSize: 22),
                 ),
                 ElevatedButton(
-                  onPressed: submitForm,
+                  onPressed: goToRegisterPage, // Navigasi ke halaman Regis
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.black,
                     backgroundColor: Colors.white, // Warna teks
@@ -188,6 +199,11 @@ class _LoginState extends State<Login> {
                         width: 10,
                       ),
                       Text('Google', style: GoogleFonts.roboto(fontSize: 20)),
+                      SizedBox(width: 8),
+                      Text(
+                        'Register',
+                        style: TextStyle(fontSize: 20),
+                      ),
                     ],
                   ),
                 ),
