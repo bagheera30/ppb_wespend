@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AddExpendesPage extends StatefulWidget {
   const AddExpendesPage({super.key});
@@ -16,7 +17,10 @@ class _AddExpendesPageState extends State<AddExpendesPage> {
       builder: (BuildContext context) {
         return AlertDialog(
           backgroundColor: Colors.white, // Latar belakang warna kuning
-          title: Text('Data Tersimpan'),
+          title: Text(
+            'Data Tersimpan',
+            style: GoogleFonts.roboto(),
+          ),
           content: Text('Data Expends telah disimpan.'),
           actions: [
             TextButton(

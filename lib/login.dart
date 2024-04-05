@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pbb_wespend/home.dart';
 
 class Login extends StatefulWidget {
@@ -51,25 +52,24 @@ class _LoginState extends State<Login> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const Text(
+                Text(
                   "WSpend",
-                  style: TextStyle(
+                  style: GoogleFonts.vampiroOne(
                     fontSize: 30,
                     color: Colors.black87,
-                    fontFamily: "VampiroOne",
                   ),
                 ),
                 const SizedBox(height: 30),
-                const Align(
+                Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
-                    padding: EdgeInsets.only(left: 20),
+                    padding: const EdgeInsets.only(left: 20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           "Ayo mulai bijak dengan keuanganmu di aplikasi WSpend!",
-                          style: TextStyle(fontSize: 20, fontFamily: "Roboto"),
+                          style: GoogleFonts.roboto(fontSize: 20),
                         ),
                         // Tambahkan widget atau teks di sini
                       ],
@@ -82,14 +82,14 @@ class _LoginState extends State<Login> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(left: 12),
+                      padding: const EdgeInsets.only(left: 12),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "Email",
-                            style: TextStyle(fontSize: 20),
+                            style: GoogleFonts.roboto(fontSize: 20),
                           ),
                           TextField(
                             controller: emailController,
@@ -101,23 +101,24 @@ class _LoginState extends State<Login> {
                             },
                           ),
                           if (!isEmailValid)
-                            const Text(
+                            Text(
                               "Email harus berakhir dengan @gmail.com",
-                              style: TextStyle(color: Colors.red),
+                              style: GoogleFonts.roboto(
+                                  textStyle: const TextStyle(color: Colors.red)),
                             ),
                         ],
                       ),
                     ),
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     Padding(
-                      padding: EdgeInsets.only(left: 12),
+                      padding: const EdgeInsets.only(left: 12),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "Password",
-                            style: TextStyle(fontSize: 20),
+                            style: GoogleFonts.roboto(fontSize: 20),
                           ),
                           TextField(
                             controller: passwordController,
@@ -139,13 +140,9 @@ class _LoginState extends State<Login> {
                     ),
                   ],
                 ),
-                SizedBox(height: 50),
+                const SizedBox(height: 50),
                 ElevatedButton(
                   onPressed: submitForm,
-                  child: const Text(
-                    "Masuk",
-                    style: TextStyle(fontSize: 20),
-                  ),
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.black,
                     backgroundColor: Colors.white, // Warna teks
@@ -156,11 +153,15 @@ class _LoginState extends State<Login> {
                           BorderRadius.circular(30), // Sudut melengkung
                     ),
                   ),
+                  child: Text(
+                    "Masuk",
+                    style: GoogleFonts.roboto(fontSize: 20),
+                  ),
                 ),
                 const SizedBox(height: 50),
-                const Text(
+                Text(
                   "Atau",
-                  style: TextStyle(fontSize: 22),
+                  style: GoogleFonts.roboto(fontSize: 22),
                 ),
                 ElevatedButton(
                   onPressed: submitForm,
@@ -177,11 +178,16 @@ class _LoginState extends State<Login> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SizedBox(width: 8),
-                      Text(
-                        'Google',
-                        style: TextStyle(fontSize: 20),
+                      const SizedBox(width: 8),
+                      Image.asset(
+                        'assets/images/google.png',
+                        width: 50,
+                        height: 50,
                       ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text('Google', style: GoogleFonts.roboto(fontSize: 20)),
                     ],
                   ),
                 ),

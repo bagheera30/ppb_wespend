@@ -18,9 +18,9 @@ class _HomeState extends State<Home> {
   final _pgc = PageController(initialPage: 0);
   final List<Widget> _pages = const [
     HomePage(),
-    LaporanPage(),
-    AddIncomePage(),
     LimitPage(),
+    AddIncomePage(),
+    LaporanPage(),
     ProfilePage(),
   ];
 
@@ -78,26 +78,26 @@ class _HomeState extends State<Home> {
             _goToPage(index);
           }
         },
-        selectedItemColor: Colors.yellow,
+        selectedItemColor: Colors.yellow[600],
         unselectedItemColor: Colors.black,
         unselectedLabelStyle: const TextStyle(color: Colors.black),
         iconSize: 30,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.report),
-            label: 'laporan',
+            icon: Icon(Icons.attach_money),
+            label: 'limit',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.add_circle_outline_outlined),
             label: 'add',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.attach_money),
-            label: 'limit',
+            icon: Icon(Icons.report),
+            label: 'laporan',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
@@ -110,17 +110,19 @@ class _HomeState extends State<Home> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 FloatingActionButton(
+                  backgroundColor: Colors.yellow,
                   onPressed: () {
                     _goToAddIncomePage();
                   },
                   heroTag: null,
-                  child: Icon(Icons.add),
+                  child: Icon(Icons.add, color: Colors.black),
                 ),
                 const SizedBox(height: 16),
                 FloatingActionButton(
+                  backgroundColor: Colors.yellow,
                   onPressed: _goToExpandedPage,
                   heroTag: null,
-                  child: Icon(Icons.expand),
+                  child: Icon(Icons.expand, color: Colors.black),
                 ),
               ],
             )
