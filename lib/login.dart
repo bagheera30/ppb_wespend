@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pbb_wespend/regis.dart';
 
 class Login extends StatefulWidget {
@@ -29,15 +30,6 @@ class _LoginState extends State<Login> {
     setState(() {
       isPasswordVisible = !isPasswordVisible;
     });
-  }
-
-  void goToRegisterPage() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const Regis(), // Navigasi ke halaman Regis
-      ),
-    );
   }
 
   void goToRegisterPage() {
