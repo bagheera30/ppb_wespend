@@ -49,7 +49,7 @@ class _RegisState extends State<Regis> {
   void submitForm() {
     if (isPasswordMatch) {
       // Password match, proceed to registration
-      Navigator.pushReplacement(
+      Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) => const Home(),

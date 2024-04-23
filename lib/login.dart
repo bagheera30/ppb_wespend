@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pbb_wespend/home.dart';
 import 'package:pbb_wespend/regis.dart';
 
 class Login extends StatefulWidget {
@@ -42,7 +43,12 @@ class _LoginState extends State<Login> {
   }
 
   void submitForm() {
-    // Implementasi logika autentikasi atau navigasi sesuai kebutuhan aplikasi Anda
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const Home(),
+      ),
+    );
   }
 
   @override
