@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'dart:math';
 
@@ -17,7 +18,17 @@ class _HomePageState extends State<HomePage> {
 
   final formatCurrency = NumberFormat.currency(locale: 'id_ID', symbol: 'Rp');
 
-  List<int> riwayatList = [1, 2, -1, 3, 4, -2, -3, 5, -4, -5];
+  List<int> riwayatList = [
+    1,
+    2,
+    -1,
+    3,
+    4,
+    -2,
+    -3,
+    5,
+    -4,
+  ];
   int visibleRiwayatCount = 5;
 
   void loadMoreRiwayat() {
@@ -49,14 +60,14 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  "Selamat bergabung dengan WeSpend",
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.black87,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                Text("Selamat bergabung dengan WeSpend",
+                    style: GoogleFonts.roboto(
+                      textStyle: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black87,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
                 const SizedBox(height: 30),
                 Container(
                   width: double.infinity,
@@ -71,14 +82,14 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          "Pengeluaran di bulan $bulan",
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.black87,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                        Text("Pengeluaran di bulan $bulan",
+                            style: GoogleFonts.roboto(
+                              textStyle: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black87,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )),
                         SizedBox(height: 10),
                         Container(
                           width: double.infinity,
@@ -102,14 +113,14 @@ class _HomePageState extends State<HomePage> {
 
                                 return DropdownMenuItem<int>(
                                   value: angka,
-                                  child: Text(
-                                    formattedAngka,
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: Colors.black87,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
+                                  child: Text(formattedAngka,
+                                      style: GoogleFonts.roboto(
+                                        textStyle: TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.black87,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      )),
                                 );
                               }).toList(),
                             ),
@@ -133,12 +144,15 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text("Saldo",
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.black87,
-                              fontWeight: FontWeight.bold,
-                            )),
+                        Text(
+                          "Saldo",
+                          style: GoogleFonts.roboto(
+                              textStyle: TextStyle(
+                            fontSize: 16,
+                            color: Colors.black87,
+                            fontWeight: FontWeight.bold,
+                          )),
+                        ),
                         const SizedBox(height: 20),
                         Container(
                           width: double.infinity,
@@ -149,14 +163,14 @@ class _HomePageState extends State<HomePage> {
                           ),
                           child: Padding(
                             padding: const EdgeInsets.only(left: 8, top: 12),
-                            child: Text(
-                              formatCurrency.format(saldo),
-                              style: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.black87,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
+                            child: Text(formatCurrency.format(saldo),
+                                style: GoogleFonts.roboto(
+                                  textStyle: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.black87,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                )),
                           ),
                         )
                       ],
@@ -176,14 +190,14 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
-                          "Riwayat",
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.black87,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                        Text("Riwayat",
+                            style: GoogleFonts.roboto(
+                              textStyle: TextStyle(
+                                fontSize: 20,
+                                color: Colors.black87,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )),
                         const SizedBox(height: 30),
                         Expanded(
                           child: ListView.builder(
@@ -199,23 +213,26 @@ class _HomePageState extends State<HomePage> {
                                 children: [
                                   Text(
                                     pemasukanText,
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      color: Colors.black87,
-                                      fontWeight: FontWeight.bold,
+                                    style: GoogleFonts.roboto(
+                                      textStyle: TextStyle(
+                                        fontSize: 15,
+                                        color: Colors.black87,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
                                   ),
                                   Row(
                                     children: [
                                       Text(
-                                        formatCurrency
-                                            .format(getRandomNumber()),
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                          color: Colors.black87,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
+                                          formatCurrency
+                                              .format(getRandomNumber()),
+                                          style: GoogleFonts.roboto(
+                                            textStyle: TextStyle(
+                                              fontSize: 16,
+                                              color: Colors.black87,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          )),
                                     ],
                                   ),
                                 ],
@@ -225,16 +242,17 @@ class _HomePageState extends State<HomePage> {
                         ),
                         if (visibleRiwayatCount < riwayatList.length)
                           TextButton(
-                            onPressed: loadMoreRiwayat,
-                            child: Text(
-                              'Load More',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.blue,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
+                              onPressed: loadMoreRiwayat,
+                              child: Text(
+                                'Load More',
+                                style: GoogleFonts.roboto(
+                                  textStyle: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.blue,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              )),
                       ],
                     ),
                   ),

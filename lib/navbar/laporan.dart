@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LaporanPage extends StatefulWidget {
   const LaporanPage({Key? key}) : super(key: key);
@@ -22,13 +23,13 @@ class _LaporanPageState extends State<LaporanPage> {
         elevation: 0,
         centerTitle: true,
         leading: Container(),
-        title: const Text(
-          'Laporan',
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+        title: Text('Laporan',
+            style: GoogleFonts.roboto(
+              textStyle: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            )),
       ),
       body: Container(
         color: Colors.yellow[600],
@@ -36,14 +37,14 @@ class _LaporanPageState extends State<LaporanPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const Text(
-              'Pilih bulan dan tahun untuk melihat laporan',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
+            Text('Pilih bulan dan tahun untuk melihat laporan',
+                style: GoogleFonts.roboto(
+                  textStyle: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                )),
             const SizedBox(height: 16),
             Row(
               children: [
@@ -62,12 +63,13 @@ class _LaporanPageState extends State<LaporanPage> {
                     },
                     items: bulanList.map((String bulan) {
                       return DropdownMenuItem<String>(
-                        value: bulan,
-                        child: Text(
-                          bulan,
-                          style: TextStyle(color: Colors.black),
-                        ),
-                      );
+                          value: bulan,
+                          child: Text(
+                            bulan,
+                            style: GoogleFonts.roboto(
+                              textStyle: TextStyle(color: Colors.black),
+                            ),
+                          ));
                     }).toList(),
                   ),
                 ),
@@ -87,12 +89,13 @@ class _LaporanPageState extends State<LaporanPage> {
                     },
                     items: tahunList.map((String tahun) {
                       return DropdownMenuItem<String>(
-                        value: tahun,
-                        child: Text(
-                          tahun,
-                          style: TextStyle(color: Colors.black),
-                        ),
-                      );
+                          value: tahun,
+                          child: Text(
+                            tahun,
+                            style: GoogleFonts.roboto(
+                              textStyle: TextStyle(color: Colors.black),
+                            ),
+                          ));
                     }).toList(),
                   ),
                 ),

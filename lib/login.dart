@@ -78,9 +78,10 @@ class _LoginState extends State<Login> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Ayo mulai bijak dengan keuanganmu di aplikasi WSpend!",
-                          style: GoogleFonts.roboto(fontSize: 20),
-                        ),
+                            "Ayo mulai bijak dengan keuanganmu di aplikasi WSpend!",
+                            style: GoogleFonts.roboto(
+                              textStyle: TextStyle(fontSize: 20),
+                            )),
                         // Tambahkan widget atau teks di sini
                       ],
                     ),
@@ -111,10 +112,10 @@ class _LoginState extends State<Login> {
                             },
                           ),
                           if (!isEmailValid)
-                            Text(
-                              "Email harus berakhir dengan @gmail.com",
-                              style: TextStyle(color: Colors.red),
-                            ),
+                            Text("Email harus berakhir dengan @gmail.com",
+                                style: GoogleFonts.roboto(
+                                  textStyle: TextStyle(color: Colors.red),
+                                )),
                         ],
                       ),
                     ),
@@ -167,10 +168,13 @@ class _LoginState extends State<Login> {
                     style: GoogleFonts.roboto(fontSize: 20),
                   ),
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 30),
                 Text(
                   "Atau",
                   style: GoogleFonts.roboto(fontSize: 22),
+                ),
+                SizedBox(
+                  height: 30,
                 ),
                 ElevatedButton(
                   onPressed: goToRegisterPage, // Navigasi ke halaman Regis
@@ -188,20 +192,10 @@ class _LoginState extends State<Login> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const SizedBox(width: 8),
-                      Image.asset(
-                        'assets/images/google.png',
-                        width: 50,
-                        height: 50,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Text('Google', style: GoogleFonts.roboto(fontSize: 20)),
-                      SizedBox(width: 8),
-                      Text(
-                        'Register',
-                        style: TextStyle(fontSize: 20),
-                      ),
+                      Text('Register',
+                          style: GoogleFonts.roboto(
+                            textStyle: TextStyle(fontSize: 20),
+                          )),
                     ],
                   ),
                 ),

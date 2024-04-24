@@ -78,7 +78,7 @@ class _HomeState extends State<Home> {
             _goToPage(index);
           }
         },
-        selectedItemColor: Colors.yellow[600],
+        selectedItemColor: const Color.fromARGB(255, 131, 109, 0),
         unselectedItemColor: Colors.black,
         unselectedLabelStyle: const TextStyle(color: Colors.black),
         iconSize: 30,
@@ -110,19 +110,19 @@ class _HomeState extends State<Home> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 FloatingActionButton(
-                  backgroundColor: Colors.yellow,
+                  backgroundColor: Color.fromARGB(255, 170, 148, 43),
                   onPressed: () {
                     _goToAddIncomePage();
                   },
                   heroTag: null,
-                  child: Icon(Icons.add, color: Colors.black),
+                  child: Icon(Icons.add, color: Colors.white),
                 ),
                 const SizedBox(height: 16),
                 FloatingActionButton(
-                  backgroundColor: Colors.yellow,
+                  backgroundColor: Color.fromARGB(255, 170, 148, 43),
                   onPressed: _goToExpandedPage,
                   heroTag: null,
-                  child: Icon(Icons.expand, color: Colors.black),
+                  child: Icon(Icons.expand, color: Colors.white),
                 ),
               ],
             )

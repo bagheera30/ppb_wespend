@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pbb_wespend/login.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Intro extends StatefulWidget {
   const Intro({Key? key}) : super(key: key);
@@ -17,24 +18,24 @@ class _IntroState extends State<Intro> {
           children: [
             Container(
               color: Colors.yellow[600],
-              child: const Center(
+              child: Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      "WSPend",
-                      style: TextStyle(
-                        fontFamily: "VampiroOne",
-                        color: Colors.black,
-                        fontSize: 36,
-                      ),
-                    ),
+                    Text("WSPend",
+                        style: GoogleFonts.vampiroOne(
+                          textStyle: TextStyle(
+                            color: Colors.black,
+                            fontSize: 36,
+                          ),
+                        )),
                     SizedBox(height: 20),
                     Text(
-                      "Hello WSpend friends! Welcome to the WSpend application where your journey to become financially wise begins!",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontFamily: "Roboto", fontSize: 20),
-                    ),
+                        "Hello WSpend friends! Welcome to the WSpend application where your journey to become financially wise begins!",
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.roboto(
+                          textStyle: TextStyle(fontSize: 20),
+                        )),
                   ],
                 ),
               ),
@@ -49,10 +50,12 @@ class _IntroState extends State<Intro> {
                     MaterialPageRoute(builder: (context) => const Login()),
                   );
                 },
-                child: const Text(
+                child: Text(
                   "Continue",
-                  style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold),
+                  style: GoogleFonts.roboto(
+                    textStyle: const TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                  ),
                 ),
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
