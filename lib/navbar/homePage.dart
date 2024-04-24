@@ -51,7 +51,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+        body: SafeArea(
+      child: SingleChildScrollView(
         child: Container(
           color: Colors.yellow[600],
           child: Padding(
@@ -262,6 +263,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-    );
+    ));
   }
 }
